@@ -8,10 +8,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
+@Table(name = "REVIEWS")
 public class Review {
 
     @Id
-    @GeneratedValue (generator = "review_Id_sequence")
+    @GeneratedValue (generator = "review_id_sequence")
     private Long id;
 
     @ManyToOne
