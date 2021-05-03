@@ -11,7 +11,7 @@ create table reviews
 
 
 alter table reviews
-    add constraint review_user_constraint foreign key (author_username) references users;
+    add constraint review_user_fk foreign key (author_username) references users;
 
 alter table reviews
-    add constraint review_movie_constraint foreign key (target_movie_id) references movie
+    add constraint review_movie_fk foreign key (target_movie_id) references movie
