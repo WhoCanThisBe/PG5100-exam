@@ -14,8 +14,8 @@ may be redudant, but did it in the beginning to tet h2 before ostgres)
 * [ ] DO NOT USE framworks like MOCKITO
 
 ##### R1 requirements 
-* [ ] User: having info like name, surname, hashed-password, email, etc.
-* [ ] Movie: having info like title, director, year of release, etc.
+* [ ] [x] User: having info like name, surname, hashed-password, email, etc.
+* [ ] [x] Movie: having info like title, director, year of release, etc.
 * [ ] Review: having info like the target movie, the actual review text, the user author, when the
   review was created, etc
 

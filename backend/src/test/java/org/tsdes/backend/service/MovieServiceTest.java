@@ -5,8 +5,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.tsdes.backend.entity.Movie;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
@@ -29,8 +27,8 @@ public class MovieServiceTest extends ServiceTestBase {
     public void create_movie_test() {
 
         Long movieId = createMovie();
-
-        assertNotNull(movieId);
+        String title = "movie title";
+        assertEquals(title,ms.getMovie(movieId).getTitle());
         assertEquals(1, ms.getMoviesList().size());
 
     }
@@ -41,20 +39,6 @@ public class MovieServiceTest extends ServiceTestBase {
         assertEquals(1,ms.getMoviesList().size());
         ms.deleteMovie(movieId);
         assertEquals(0,ms.getMoviesList().size());
-
-
-
-
-//
-//
-//        Long mockId = movieId + 1;
-//
-//        //should fail when there is no created with that id;
-//        ms.deleteMovie(mockId);
-
-
     }
-
-
 
 }
