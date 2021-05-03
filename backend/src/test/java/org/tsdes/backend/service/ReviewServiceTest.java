@@ -50,7 +50,7 @@ class ReviewServiceTest {
     }
 
     @Test
-    public void creating_review_to_a_movie(){
+    public void creating_review_to_a_movie_with_star_rating(){
 
         String userName = createUserAuthor();
         String title = "movieTest";
@@ -59,11 +59,12 @@ class ReviewServiceTest {
         Long reviewId = createReview(userName, movieId);
 
         String reviewText = reviewService.getReview(reviewId).getTargetMovie().getTitle();
+        int star =  reviewService.getReview(reviewId).getRating();
 
+        assertEquals(4,star);
         assertEquals(title,reviewText);
 
     }
-
 
 
     @Test
