@@ -8,8 +8,10 @@ import org.tsdes.backend.entity.Review;
 import org.tsdes.backend.entity.User;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 @Service
 @Transactional
@@ -42,5 +44,26 @@ public class ReviewService {
         return review.getId();
     }
     public Review getReview(@NotNull long id){return em.find(Review.class,id);}
+
+    public List<Review> getReviewListPerMovie(Movie targetmovieid){
+        Query query = em.createQuery(
+                "select r from Review r where r.targetMovie = ?1", Review.class);
+        query.setParameter(1,targetmovieid);
+
+        return query.getResultList();
+    }
+
+    public double getAverageRating(Movie targetmovieid){
+        Query query = em.createQuery(
+                "select avg(r.rating) from Review r where r.targetMovie = ?1");
+        query.setParameter(1, targetmovieid);
+
+        Double res = (Double) query.getSingleResult();
+        if(res == null){
+            return 0.0;}
+        return res;
+    }
+
+
 
 }

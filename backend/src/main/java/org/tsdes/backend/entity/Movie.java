@@ -2,6 +2,8 @@ package org.tsdes.backend.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Movie {
@@ -18,8 +20,9 @@ public class Movie {
     @Size(min=1, max = 128)
     private String director;
 
+
     @NotNull
-    private Integer yearOfRelease;
+    private int yearOfRelease;
 
     public Long getId() {
         return id;
@@ -52,4 +55,6 @@ public class Movie {
     public void setYearOfRelease(int yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
     }
+
+
 }
