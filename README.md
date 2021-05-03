@@ -1,6 +1,6 @@
 # PG5100-exam
 
-
+* [ ] remember to fix to validate
 ## Innlevering
 
 #### if you want to run main applicasion it is in frontend and you need to have a postgres server on port 5432 with password `password` for local dev
