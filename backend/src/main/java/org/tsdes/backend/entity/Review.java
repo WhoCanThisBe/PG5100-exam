@@ -23,7 +23,7 @@ public class Review {
 //https://stackoverflow.com/questions/23068676/how-to-get-current-timestamp-in-string-format-in-java-yyyy-mm-dd-hh-mm-ss
     private String reviewDate = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date());
 
-    @OneToOne
+    @ManyToOne
     private User author;
 
     //Getters and setters

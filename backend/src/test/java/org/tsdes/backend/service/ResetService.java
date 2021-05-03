@@ -24,6 +24,8 @@ public class ResetService {
         query.executeUpdate();
 
         deleteEntities(User.class);
+        deleteEntities(Movie.class);
+        deleteEntities(Review.class);
         //deleteEntities( class of wat you want to reset);
     }
 

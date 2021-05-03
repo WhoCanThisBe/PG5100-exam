@@ -10,18 +10,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest( webEnvironment = SpringBootTest.WebEnvironment.NONE)
-class UserServiceTest extends ServiceTestBase {
+public class MovieServiceTest extends ServiceTestBase {
 
     @Autowired
-    private UserService userService;
+    private MovieService ms;
 
     @Test
-    public void test_create_user(){
-        assertTrue(userService.createUser(
-                "fooUser",
-                "testpassword",
-                "fooName",
-                "fooSurname","foo@mail.com"));
-    }
+    public void create_movie_test() {
+        Long movieId = ms.createMovie(
+                "movie title",
+                "director foo",
+                1
+        );
+        assertNotNull(movieId);
 
+        assertEquals(1, ms.getMoviesList().size());
+
+    }
 }

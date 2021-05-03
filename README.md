@@ -1,8 +1,10 @@
 # PG5100-exam
 https://stackoverflow.com/questions/39808940/how-to-get-current-date-in-spring-form-of-jsp-page
 * [ ] remember to fix to validate
-## Innlevering
+## 
 
+import javax.validation.constraints.NotNull;
+may be redudant, but did it in the beginning to tet h2 before ostgres) 
 #### if you want to run main applicasion it is in frontend and you need to have a postgres server on port 5432 with password `password` for local dev
 
 * [ ] The exam assignment will have to be zipped in a zip file with name pg5100_<id>.zip
@@ -19,7 +21,7 @@ https://stackoverflow.com/questions/39808940/how-to-get-current-date-in-spring-f
 
 You need to write Spring @Service classes to provide at least the following functionalities:
 
-* [ ] create a user
+* [ ] [x] create a user
 * [ ] create/delete a movie
 * [ ] add review to a movie, with a 1 to 5 star
 * [ ] compute average of stars per movie
