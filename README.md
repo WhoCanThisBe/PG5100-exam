@@ -1,5 +1,5 @@
 # PG5100-exam
-
+https://stackoverflow.com/questions/39808940/how-to-get-current-date-in-spring-form-of-jsp-page
 * [ ] remember to fix to validate
 ## Innlevering
 
