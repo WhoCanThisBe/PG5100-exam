@@ -16,7 +16,7 @@ may be redudant, but did it in the beginning to tet h2 before ostgres)
 ##### R1 requirements 
 * [ ] [x] User: having info like name, surname, hashed-password, email, etc.
 * [ ] [x] Movie: having info like title, director, year of release, etc.
-* [ ] Review: having info like the target movie, the actual review text, the user author, when the
+* [ ] [x] Review: having info like the target movie, the actual review text, the user author, when the
   review was created, etc
 
 You need to write Spring @Service classes to provide at least the following functionalities:

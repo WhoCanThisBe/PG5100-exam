@@ -3,7 +3,10 @@ package org.tsdes.backend.entity;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Entity
 public class Review {
 
@@ -12,6 +15,7 @@ public class Review {
     private Long id;
 
     @ManyToOne
+    @NotNull
     private Movie targetMovie;
 
     private String reviewText;
@@ -21,9 +25,10 @@ public class Review {
     private int rating;
 
 //https://stackoverflow.com/questions/23068676/how-to-get-current-timestamp-in-string-format-in-java-yyyy-mm-dd-hh-mm-ss
-    private String reviewDate = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date());
+    private String reviewDate;
 
     @ManyToOne
+    @NotNull
     private User author;
 
     //Getters and setters
@@ -67,4 +72,14 @@ public class Review {
     public void setAuthor(User author) {
         this.author = author;
     }
+
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
 }
