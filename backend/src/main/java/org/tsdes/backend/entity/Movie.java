@@ -11,16 +11,15 @@ public class Movie {
     private Long id;
 
     @NotBlank
-//    @Size(min=1, max = 128)
+    @Size(min=1, max = 128)
     private String title;
 
     @NotNull
-//    @Size(min=1, max = 128)
+    @Size(min=1, max = 128)
     private String director;
 
     @NotNull
-//    @Size(min=1, max = 4)
-    private int yearOfRelease;
+    private Integer yearOfRelease;
 
     public Long getId() {
         return id;

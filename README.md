@@ -22,7 +22,7 @@ may be redudant, but did it in the beginning to tet h2 before ostgres)
 You need to write Spring @Service classes to provide at least the following functionalities:
 
 * [ ] [x] create a user
-* [ ] create/delete a movie
+* [ ] [x] create/delete a movie
 * [ ] add review to a movie, with a 1 to 5 star
 * [ ] compute average of stars per movie
 * [ ] retrieve all movies, sorted by average stars
