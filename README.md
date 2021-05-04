@@ -3,6 +3,7 @@ https://stackoverflow.com/questions/39808940/how-to-get-current-date-in-spring-f
 * [x] remember to fix to validate
 * [x] should I have all Users review or get all review to a movie
 * [x] check of year is set correct
+* [] check test
 
 *[ ]rmemeber constraints not null
  

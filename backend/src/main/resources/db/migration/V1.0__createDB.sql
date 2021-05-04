@@ -6,7 +6,7 @@ create table users(
     username varchar(32) not null,
     email varchar(255),
     enabled boolean not null,
-    firstname varchar(64),
+    firstname varchar(64) ,
     password varchar(255),
     surname varchar(64),
     primary key (username));
