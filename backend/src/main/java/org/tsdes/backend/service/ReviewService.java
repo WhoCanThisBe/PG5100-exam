@@ -9,6 +9,7 @@ import org.tsdes.backend.entity.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -66,6 +67,11 @@ public class ReviewService {
         if(res == null){
             return 0.0;}
         return res;
+    }
+
+    public List<Review> getAllReviews(){
+        TypedQuery<Review> query = em.createQuery("select r from Review r", Review.class);
+        return query.getResultList();
     }
 
 

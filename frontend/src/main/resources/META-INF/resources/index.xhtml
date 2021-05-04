@@ -3,6 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:sec="http://www.springframework.org/security/tags"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+
 >
 
 <ui:composition template="/layout.xhtml">
@@ -17,11 +19,25 @@
 
         <sec:authenticated>
             <h3>you are loged inn</h3>
+            <p>
+                <h:dataTable value="#{movieController.allMoviesWithReview}" var="movie" border="1">
+                    <h:column>#{movie.movie.director}</h:column>
+                    <h:column>#{movie.movie.title}</h:column>
+                    <h:column>#{movie.avgRating}</h:column>
+                </h:dataTable>
+            </p>
         </sec:authenticated>
+
 
 
         <sec:anonymous>
             <h3>Log in</h3>
+            <p>
+                <h:dataTable value="#{movieController.allMovies}" var="movie" border="1">
+                    <h:column>#{movie.title}</h:column>
+                    <h:column>#{movie.director}</h:column>
+                </h:dataTable>
+            </p>
         </sec:anonymous>
 
     </ui:define>
