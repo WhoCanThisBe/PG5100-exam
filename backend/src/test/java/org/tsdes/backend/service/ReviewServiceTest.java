@@ -19,17 +19,17 @@ class ReviewServiceTest extends ResetService{
 
 
     @Autowired
-    private UserService userService;
+    private UserService us;
 
     @Autowired
-    private MovieService movieService;
+    private MovieService ms;
 
     @Autowired
-    private ReviewService reviewService;
+    private ReviewService rs;
 
     private String createUserAuthor() {
         String userName = "fooUser";
-        userService.createUser(
+        us.createUser(
                 userName,
                 "testpassword",
                 "fooName",
@@ -38,7 +38,7 @@ class ReviewServiceTest extends ResetService{
     }
 
     private Long createMovies(String titles){
-        return movieService.createMovie(
+        return ms.createMovie(
                 titles,
                 "fooDirector",
                 1995
@@ -46,7 +46,7 @@ class ReviewServiceTest extends ResetService{
     }
 
     private Long createReview(String userName, Long movieId, int rating) {
-        return reviewService.createReview(
+        return rs.createReview(
                 movieId,
                 "some awesome review",
                 userName,
@@ -65,14 +65,14 @@ class ReviewServiceTest extends ResetService{
 
         Long reviewId = createReview(userName, movieId, 4);
 
-        String reviewText = reviewService.getReview(reviewId).getTargetMovie().getTitle();
-        int star =  reviewService.getReview(reviewId).getRating();
+        String reviewText = rs.getReview(reviewId).getTargetMovie().getTitle();
+        int star =  rs.getReview(reviewId).getRating();
 
         assertEquals(4,star);
         assertEquals(title,reviewText);
 
         //check if time stamp works
-        assertEquals((new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date())), reviewService.getReview(reviewId).getReviewDate());
+        assertEquals((new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date())), rs.getReview(reviewId).getReviewDate());
 
     }
 
@@ -83,16 +83,16 @@ class ReviewServiceTest extends ResetService{
         String userName = createUserAuthor();
         String title = "movieTest";
         Long movieId = createMovies(title);
-        Movie movie = movieService.getMovie(movieId);
+        Movie movie = ms.getMovie(movieId);
         //Should expect nothing since there is no review created
-        assertEquals(0, reviewService.getReviewListMovie(movie).size());
+        assertEquals(0, rs.getReviewListMovie(movie).size());
 
         createReview(userName, movieId, 4);
         createReview(userName, movieId, 2);
 
-        assertEquals(2, reviewService.getReviewListMovie(movie).size());
+        assertEquals(2, rs.getReviewListMovie(movie).size());
 
-        List<Review> reviewList = reviewService.getReviewListMovie(movie);
+        List<Review> reviewList = rs.getReviewListMovie(movie);
 
         //check if returned rating value of the first created review
         assertEquals(4, reviewList.get(0).getRating());
@@ -106,15 +106,15 @@ class ReviewServiceTest extends ResetService{
         String userName = createUserAuthor();
         String title = "movieTest";
         Long movieId = createMovies(title);
-        Movie movie = movieService.getMovie(movieId);
+        Movie movie = ms.getMovie(movieId);
 
         // should return 0 when no reviews has been added
-        assertEquals(0,reviewService.getAverageRating(movie));
+        assertEquals(0, rs.getAverageRating(movie));
 
         createReview(userName, movieId, 4);
         createReview(userName, movieId, 2);
 
-        int average = (int) reviewService.getAverageRating(movie);
+        int average = (int) rs.getAverageRating(movie);
         //returned average should return 3
         assertEquals(3,average);
 
