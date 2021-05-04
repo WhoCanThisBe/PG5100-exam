@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest( webEnvironment = SpringBootTest.WebEnvironment.NONE)
-class ReviewServiceTest {
+class ReviewServiceTest extends ResetService{
 
 
     @Autowired

@@ -27,13 +27,18 @@ public abstract class SeleniumTestBase {
         return "foo_SeleniumLocalIT_" + counter.getAndIncrement();
     }
 
-    private IndexPO createNewUser(String username, String password) {
+    private IndexPO createNewUser(
+            String username,
+            String password,
+            String name,
+            String surname,
+            String email) {
 
         home.toStartingPage();
 
         SignUpPO signUpPO = home.toSignUp();
 
-        IndexPO indexPO = signUpPO.createUser(username, password);
+        IndexPO indexPO = signUpPO.createUser(username, password, name, surname, email);
         assertNotNull(indexPO);
 
         return indexPO;
@@ -56,7 +61,10 @@ public abstract class SeleniumTestBase {
         assertFalse(home.isLoggedIn());
         String username = getUniqueId();
         String password = "test";
-        home = createNewUser(username, password);
+        String name = "testname";
+        String surname = "testsurname";
+        String email = "test@mail.com";
+        home = createNewUser(username, password,name,surname,email);
         assertTrue(home.isLoggedIn());
         assertTrue(home.getDriver().getPageSource().contains(username));
         home.doLogout();
