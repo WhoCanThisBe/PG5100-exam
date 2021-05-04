@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.tsdes.backend.entity.Movie;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -47,8 +48,4 @@ public class MovieService {
     public Movie getMovie(long id){
         return em.find(Movie.class,id);
     }
-
-
-
-
 }

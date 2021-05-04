@@ -26,10 +26,10 @@ You need to write Spring @Service classes to provide at least the following func
 
 * [ ] [x] create a user
 * [ ] [x] create/delete a movie
-* [ ] add review to a movie, with a 1 to 5 star
-* [ ] compute average of stars per movie
+* [ ] [x]add review to a movie, with a 1 to 5 star
+* [ ] [x]compute average of stars per movie
 * [ ] retrieve all movies, sorted by average stars
-* [ ] retrieve all reviews for a movie, sorted by either stars or creation time of the review
+* [ ] [x]retrieve all reviews for a movie, sorted by either stars or creation time of the review
 
 * [ ] Write integration tests for each of the @Service classes, using JUnit and @SpringBootTest annotation. You
   should have at least one test for each of the public methods in those services. Enable the calculation of

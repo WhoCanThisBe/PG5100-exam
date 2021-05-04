@@ -45,13 +45,15 @@ public class ReviewService {
     }
     public Review getReview(@NotNull long id){return em.find(Review.class,id);}
 
-    public List<Review> getReviewListPerMovie(Movie targetmovieid){
+    public List<Review> getReviewListMovie(Movie targetmovieid){
+
         Query query = em.createQuery(
                 "select r from Review r where r.targetMovie = ?1", Review.class);
         query.setParameter(1,targetmovieid);
 
         return query.getResultList();
     }
+
 
     public double getAverageRating(Movie targetmovieid){
         Query query = em.createQuery(
