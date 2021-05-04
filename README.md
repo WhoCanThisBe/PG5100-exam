@@ -32,7 +32,7 @@ You need to write Spring @Service classes to provide at least the following func
 * [ ] [x] create/delete a movie
 * [ ] [x]add review to a movie, with a 1 to 5 star
 * [ ] [x]compute average of stars per movie
-* [ ] retrieve all movies, sorted by average stars
+* [ ][x] retrieve all movies, sorted by average stars
 * [ ] [x]retrieve all reviews for a movie, sorted by either stars or creation time of the review
 
 * [ ][x] Write integration tests for each of the @Service classes, using JUnit and @SpringBootTest annotation. You

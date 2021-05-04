@@ -67,7 +67,6 @@ public class MovieController {
         public Movie movie;
         public double avgRating;
 
-
         public MovieView(Movie movie, double avgRating) {
             this.movie = movie;
             this.avgRating = avgRating;

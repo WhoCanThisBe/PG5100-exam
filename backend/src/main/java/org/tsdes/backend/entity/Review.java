@@ -26,7 +26,7 @@ public class Review {
     @Max(5)
     private int rating;
 
-//https://stackoverflow.com/questions/23068676/how-to-get-current-timestamp-in-string-format-in-java-yyyy-mm-dd-hh-mm-ss
+    //https://stackoverflow.com/questions/23068676/how-to-get-current-timestamp-in-string-format-in-java-yyyy-mm-dd-hh-mm-ss
     private Timestamp reviewDate;
 
     @ManyToOne

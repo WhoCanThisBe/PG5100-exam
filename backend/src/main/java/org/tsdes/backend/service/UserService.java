@@ -9,7 +9,7 @@ import org.tsdes.backend.entity.User;
 import javax.persistence.EntityManager;
 import java.util.Collections;
 /**
- * Primarily adapted from https://github.com/arcuri82/testing_security_development_enterprise_systems/
+ *  https://github.com/arcuri82/testing_security_development_enterprise_systems/
  */
 @Service
 @Transactional
@@ -21,14 +21,14 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public boolean createUser(String username, String password, String name,String surname, String email) {
+    public boolean createUser(String userName, String password, String firstName,String SurName, String email) {
         String hashedPassword = passwordEncoder.encode(password);
-        if (em.find(User.class, username) != null)
+        if (em.find(User.class, userName) != null)
             return false;
         User user = new User();
-        user.setUsername(username);
-        user.setFirstname(name);
-        user.setSurname(surname);
+        user.setUsername(userName);
+        user.setFirstname(firstName);
+        user.setSurname(SurName);
         user.setEmail(email);
         user.setPassword(hashedPassword);
         user.setRoles(Collections.singleton("USER"));
@@ -36,4 +36,7 @@ public class UserService {
         em.persist(user);
         return true;
     }
+
+    public User getUser(String userName){ return em.find(User.class, userName); }
+
 }

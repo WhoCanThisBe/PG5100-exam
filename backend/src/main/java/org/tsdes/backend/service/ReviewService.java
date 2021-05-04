@@ -46,7 +46,7 @@ public class ReviewService {
 
         return review.getId();
     }
-    public Review getReview(@NotNull long id){return em.find(Review.class,id);}
+    public Review getReview(long id){return em.find(Review.class,id);}
 
     public List<Review> getReviewListMovie(Movie targetmovieid){
 
@@ -69,10 +69,6 @@ public class ReviewService {
         return res;
     }
 
-//    public List<Review> getAllReviews(){
-//        TypedQuery<Review> query = em.createQuery("select r from Review r", Review.class);
-//        return query.getResultList();
-//    }
 
 
 
