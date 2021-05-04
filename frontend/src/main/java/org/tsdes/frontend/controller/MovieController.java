@@ -32,9 +32,6 @@ public class MovieController {
 
     //gets all reviews to all movies
 
-    private List<Review> getAllReviews(){
-        return rs.getAllReviews();
-    }
 
     /**
      * Primarily adapted from https://github.com/arcuri82/testing_security_development_enterprise_systems/

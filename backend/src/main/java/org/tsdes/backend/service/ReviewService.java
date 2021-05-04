@@ -69,10 +69,10 @@ public class ReviewService {
         return res;
     }
 
-    public List<Review> getAllReviews(){
-        TypedQuery<Review> query = em.createQuery("select r from Review r", Review.class);
-        return query.getResultList();
-    }
+//    public List<Review> getAllReviews(){
+//        TypedQuery<Review> query = em.createQuery("select r from Review r", Review.class);
+//        return query.getResultList();
+//    }
 
 
 
