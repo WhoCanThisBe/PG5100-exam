@@ -16,7 +16,6 @@ import java.util.Set;
 public class User {
     @Id
     @NotBlank
-    @Size(min = 1, max = 32)
     private String username;
 
     @NotBlank

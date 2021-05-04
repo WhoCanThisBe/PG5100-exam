@@ -48,8 +48,8 @@ You need to write Spring @Service classes to provide at least the following func
           one review per movie.
       
 * [ ] User login/signup page:
-  * [ ] based on Spring Security and storing of user info on the SQL database. It
-  * [ ] should be possible to logout from any of the pages (e.g., via a button). 
+  * [x] based on Spring Security and storing of user info on the SQL database. It
+  * [x] should be possible to logout from any of the pages (e.g., via a button). 
   * [ ] When a login/signup fails, you MUST show an error message.
 
 ##### R4: (Necessary but not Sufficient for B grade) Selenium Tests
