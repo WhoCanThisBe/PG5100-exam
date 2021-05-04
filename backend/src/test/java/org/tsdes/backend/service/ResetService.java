@@ -23,9 +23,10 @@ public class ResetService {
         Query query = em.createNativeQuery("delete from user_roles");
         query.executeUpdate();
 
+        deleteEntities(Review.class);
         deleteEntities(User.class);
         deleteEntities(Movie.class);
-        deleteEntities(Review.class);
+
         //deleteEntities( class of wat you want to reset);
     }
 

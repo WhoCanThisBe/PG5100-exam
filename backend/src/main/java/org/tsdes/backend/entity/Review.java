@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -26,7 +27,7 @@ public class Review {
     private int rating;
 
 //https://stackoverflow.com/questions/23068676/how-to-get-current-timestamp-in-string-format-in-java-yyyy-mm-dd-hh-mm-ss
-    private String reviewDate;
+    private Timestamp reviewDate;
 
     @ManyToOne
     @NotNull
@@ -58,11 +59,11 @@ public class Review {
         this.reviewText = reviewText;
     }
 
-    public String getReviewDate() {
+    public Timestamp getReviewDate() {
         return reviewDate;
     }
 
-    public void setReviewDate(String reviewDate) {
+    public void setReviewDate(Timestamp reviewDate) {
         this.reviewDate = reviewDate;
     }
 

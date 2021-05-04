@@ -8,6 +8,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.tsdes.backend.entity.Movie;
 import org.tsdes.backend.entity.Review;
 
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -41,7 +42,7 @@ class ReviewServiceTest extends ResetService{
         return ms.createMovie(
                 titles,
                 "fooDirector",
-                1995
+                Date.valueOf("1977-05-25")
         );
     }
 
@@ -72,7 +73,7 @@ class ReviewServiceTest extends ResetService{
         assertEquals(title,reviewText);
 
         //check if time stamp works
-        assertEquals((new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date())), rs.getReview(reviewId).getReviewDate());
+        assertNotNull(rs.getReview(reviewId).getReviewDate());
 
     }
 

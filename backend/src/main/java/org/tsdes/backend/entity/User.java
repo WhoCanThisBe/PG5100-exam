@@ -20,7 +20,7 @@ public class User {
 
     @NotBlank
     @Size(min = 1, max = 64)
-    private String name;
+    private String firstname;
 
     @NotBlank
     @Size(min = 1, max = 64)
@@ -47,12 +47,12 @@ public class User {
         this.username = username;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String name) {
+        this.firstname = name;
     }
 
     public String getSurname() {

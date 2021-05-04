@@ -1,9 +1,13 @@
 # PG5100-exam
 https://stackoverflow.com/questions/39808940/how-to-get-current-date-in-spring-form-of-jsp-page
-* [ ] remember to fix to validate
-* [ ] should I have all Users review or get all review to a movie
-* [ ] check of year is set correct
+* [x] remember to fix to validate
+* [x] should I have all Users review or get all review to a movie
+* [x] check of year is set correct
+
+*[ ]rmemeber constraints not null
  
+I made the infom
+
 ## 
 
 import javax.validation.constraints.NotNull;
@@ -31,7 +35,7 @@ You need to write Spring @Service classes to provide at least the following func
 * [ ] retrieve all movies, sorted by average stars
 * [ ] [x]retrieve all reviews for a movie, sorted by either stars or creation time of the review
 
-* [ ] Write integration tests for each of the @Service classes, using JUnit and @SpringBootTest annotation. You
+* [ ][x] Write integration tests for each of the @Service classes, using JUnit and @SpringBootTest annotation. You
   should have at least one test for each of the public methods in those services. Enable the calculation of
   code coverage with JaCoCo.
 
@@ -50,13 +54,19 @@ You need to write Spring @Service classes to provide at least the following func
 * [ ] User login/signup page:
   * [x] based on Spring Security and storing of user info on the SQL database. It
   * [x] should be possible to logout from any of the pages (e.g., via a button). 
-  * [ ] When a login/signup fails, you MUST show an error message.
+  * [x] When a login/signup fails, you MUST show an error message.
 
 ##### R4: (Necessary but not Sufficient for B grade) Selenium Tests
 
 testDefaultMovies: 
   * [ ] go to home page, and verify that at least 2 movies are displayed (there
         should be at least 2 movies by default initialized in the database).
+    
+    Solution:
+    -  on this I have just added i directly in the postgres, when you start the project.  
+       I could have created defaultInitializerController, but prioritized to do the other requirements.  
+    -   obs! remember to run:
+        -- docker run -d -u postgres -e POSTGRES_PASSWORD=password -p 5432:5432 postgres:13)
     
 * [ ] testWriteReview:
     1.  go to movie details page for a movie, and verify you cannot write a review for

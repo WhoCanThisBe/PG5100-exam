@@ -10,7 +10,9 @@ import org.tsdes.backend.entity.User;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -36,7 +38,7 @@ public class ReviewService {
         review.setTargetMovie(targetMovie);
         review.setAuthor(userAuthor);
         review.setRating(rating);
-        review.setReviewDate(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()));
+        review.setReviewDate(Timestamp.valueOf(LocalDateTime.now()));
 
 
         em.persist(review);

@@ -1,14 +1,12 @@
-create table user_roles
-(
+create table user_roles(
     user_username varchar(255) not null,
-    roles varchar(255)
-);
-create table users
-(
+    roles varchar(255));
+
+create table users(
     username varchar(32) not null,
     email varchar(255),
     enabled boolean not null,
-    name varchar(64),
+    firstname varchar(64),
     password varchar(255),
     surname varchar(64),
     primary key (username));

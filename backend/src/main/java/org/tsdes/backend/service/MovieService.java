@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -22,7 +23,7 @@ public class MovieService {
     public Long createMovie(
             @NotNull String title,
             @NotNull String director,
-            @NotNull int year_of_release){
+            @NotNull Date year_of_release){
 
         Movie movie = new Movie();
         movie.setTitle(title);

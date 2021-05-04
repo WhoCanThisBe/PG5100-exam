@@ -5,6 +5,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.sql.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
@@ -18,7 +21,7 @@ public class MovieServiceTest extends ServiceTestBase {
         return ms.createMovie(
                 "movie title",
                 "director foo",
-                1995
+                Date.valueOf("1977-05-25")
         );
     }
 

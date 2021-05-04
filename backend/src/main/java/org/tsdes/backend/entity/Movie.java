@@ -2,6 +2,7 @@ package org.tsdes.backend.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class Movie {
 
 
     @NotNull
-    private int yearOfRelease;
+    private Date yearOfRelease;
 
     public Long getId() {
         return id;
@@ -48,11 +49,11 @@ public class Movie {
         this.director = director;
     }
 
-    public int getYearOfRelease() {
+    public Date getYearOfRelease() {
         return yearOfRelease;
     }
 
-    public void setYearOfRelease(int yearOfRelease) {
+    public void setYearOfRelease(Date yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
     }
 
