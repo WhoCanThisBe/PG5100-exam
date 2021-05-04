@@ -7,7 +7,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 /**
- * Primarily adapted from https://github.com/arcuri82/testing_security_development_enterprise_systems/
+ * adapted from https://github.com/arcuri82/testing_security_development_enterprise_systems/
  */
 @Named
 @RequestScoped

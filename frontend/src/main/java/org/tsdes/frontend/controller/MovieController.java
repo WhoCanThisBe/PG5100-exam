@@ -29,71 +29,23 @@ public class MovieController {
     @Autowired
     private UserService us;
 
-
-    //gets all reviews to all movies
-
-
-    /**
-     * Primarily adapted from https://github.com/arcuri82/testing_security_development_enterprise_systems/
-     */
-    private String getUserName(){
-        String userName = "";
-        try {
-            userName = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
-        } catch (ClassCastException e) {
-            //ignore
-        }
-        return userName;
-    }
+    private List <Movie> movies = null;
+    private List <Review> reviews = null;
 
 
     public List<Movie> getAllMovies(){
         return ms.getMoviesList();
     }
 
-
-
-    //  https://medium.com/javarevisited/stream-tolist-and-other-converter-methods-ive-wanted-since-java-2-c620500cb7ab
-    public List<MovieView> getAllMoviesWithReview() {
-        return getAllMovies()
-                .stream()
-                .map(m -> new MovieView(m, rs.getAverageRating(m)))
-                        .collect(Collectors.toList());
-
+    public String getAvgPerMovie(Movie movie){
+        return String.format("%.2f", rs.getAverageRating(movie));
     }
 
-
-    public class MovieView{
-        public Movie movie;
-        public double avgRating;
-
-        public MovieView(Movie movie, double avgRating) {
-            this.movie = movie;
-            this.avgRating = avgRating;
-        }
-
-        public Movie getMovie() {
-            return movie;
-        }
-
-        public double getAvgRating() {
-            return avgRating;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//    public String selectMovie(Movie movie) {
+//        selectedMovie = movie;
+//        refreshReviews();
+//        return "/movie.jsf?faces-redirect=true";
+//    }
 
 
 }

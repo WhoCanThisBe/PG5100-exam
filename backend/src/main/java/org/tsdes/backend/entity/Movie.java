@@ -3,8 +3,6 @@ package org.tsdes.backend.entity;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Movie {

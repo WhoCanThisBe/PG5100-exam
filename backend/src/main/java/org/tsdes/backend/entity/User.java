@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Set;
 /**
- * Primarily adapted from https://github.com/arcuri82/testing_security_development_enterprise_systems/
+ * Adapted from https://github.com/arcuri82/testing_security_development_enterprise_systems/
  *
  * https://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/html/validation.html
  */
