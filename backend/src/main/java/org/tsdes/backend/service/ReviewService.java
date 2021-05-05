@@ -71,19 +71,4 @@ public class ReviewService {
         return res;
     }
 
-    public List <Review> getSortByRating(List <Review> reviewList) {
-        return reviewList.stream()
-                .sorted(Comparator.comparing(Review::getRating).reversed())
-                .collect(Collectors.toList());
-    }
-
-    public List <Review> getSortByTimestamp(List <Review> reviewList) {
-        return reviewList.stream()
-                .sorted(Comparator.comparing(Review::getReviewDate).reversed())
-                .collect(Collectors.toList());
-    }
-
-
-
-
 }
