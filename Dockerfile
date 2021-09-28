@@ -1,7 +1,7 @@
 FROM maven:3.6-jdk-11 as builder
 WORKDIR /app
 COPY pom.xml .
-COPY src ./src
+COPY src ./backend/src
 RUN mvn -B  package
 
 FROM adoptopenjdk/openjdk11:alpine-slim
