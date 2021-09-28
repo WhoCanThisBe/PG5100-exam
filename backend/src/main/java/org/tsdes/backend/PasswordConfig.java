@@ -9,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  */
 @Configuration
 public class PasswordConfig {
-    /*test*/
+    /*twerwrst*/
 
     @Bean
     public PasswordEncoder passwordEncoder(){
