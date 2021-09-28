@@ -18,6 +18,7 @@ public class Movie {
     @NotNull
     @Size(min=1, max = 128)
     private String director;
+    private String devopsTest;
 
 
     @NotNull
